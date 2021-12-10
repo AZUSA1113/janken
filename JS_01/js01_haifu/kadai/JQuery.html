@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <button id="btn">クリック</button> -->
+<div id="ex">どんな消え方かな？</div>
+
+
+<button id="show">ショー</button>
+<button id="hide">ハイド</button>
+
+
+    <script>
+// $("#btn").on("dblclick",function(){
+//     $("body").css("background","#000000");
+// })
+
+$("#show").on("click",function(){
+    $("#ex").fadeIn(2000);
+});
+
+$("#hide").on("click",function(){
+    $("#ex").fadeOut(2000);
+});
+
+
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>あず子の部屋</title>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<header>
+<div class=tetuko_title>
+  <div class=tetuko_item><img src="img/徹子ミニサイズ.png" alt="徹子"> </div>
+  <div class=tetuko_item> <h1>あず子の部屋</h1></div>
+  <div class=tetuko_item><img src="img/徹子ミニサイズ.png" alt="徹子"> </div>
+</div>
+
+
+<audio id="audio" loop>
+  <source src="audio/徹子の部屋.mp3" type="audio/mp3">
+</audio>
+<!-- <div class="btns">
+  <button id="musicPlay" class="btn btn-primary">music start</button>
+  <button id="musicPlay" class="btn btn-primary">music stop</button>
+
+</div> -->
+
+<audio src="audio/徹子の部屋.mp3" id="audio" pause="pause" loop="loop"></audio>
+
+<button id="btn" type="button"><span>再生</span><span>停止<span></button>
+
+</header>
+
+<main>
+  <ul>
+    <li id="uranau">START</li>
+  </ul>
+  <p id="echo"></p>
+
+  <body onload="ShowImage();">
+    <div>
+    <img id="screen1" name='screen1'></div>
+    
+   
+
+
+</main>
+
+
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+//音楽再生
+// $('#musicPlay').click(function(){
+//   alert="OK"
+//   $('#audio').get(0).play();
+// });
+
+$(function () {
+	var audio = $("#audio").get(0);
+	var isPlaying = false;
+	$("#btn").on("click", function () {
+		if (isPlaying) {
+			audio.pause();
+		} else {
+			audio.play();
+		}
+	});
+	audio.onplaying = function() {
+		isPlaying = true;
+	};
+	audio.onpause = function() {
+		isPlaying = false;
+	};
+});
+
+
+
+//画像ランダム
+$("#uranau").on("click",function(){
+  const r =Math.ceil(Math.random()*3);
+  let view="";
+  if(r==1){
+    view='<img class="gude" src="img/ぐでたま.png" width=500>';
+  }
+  if(r==2){
+    view='<img class="majin" src="img/魔神ブウ.gif" width=500>';
+  }  
+  if(r==3){
+    view='<img class="pingu" src="img/ピングー.jpeg" width=500>'
+  }
+  
+
+
+//音楽再生
+// console.log(document.getElementById('audio'));
+// console.log($('#audio'));
+// console.log($('#audio').get(0));
+
+  $("#echo").html(view)
+  
+  })
+
+
+
+  
+   
+    
+    
+    
+    
+    
+
+</script>
+</body>
+</html>
